@@ -65,7 +65,13 @@ class ListaDePersonajes extends Component {
             })}
           </div>
 
-          {this.state.loading && <p className="text-center"> Loading ...</p>}
+          {this.state.loading && (
+            <div className="col-md-1 mx-auto">
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+          )}
         </div>
         <div className="row mb-2">
           {!this.state.loading && this.state.data.info.next && (
