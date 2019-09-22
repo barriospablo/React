@@ -7,7 +7,7 @@ class NavBar extends React.Component {
     return (
       <div id="nombre0">
         <nav class="navbar navbar-expand-sm justify-content-md-center bg-success navbar-dark">
-          <Link class="navbar-brand" to="/">
+          <Link class="navbar-brand" to="/personajes">
             Logo
           </Link>
 

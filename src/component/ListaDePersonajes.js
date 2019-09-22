@@ -22,7 +22,7 @@ class ListaDePersonajes extends Component {
 
     try {
       const response = await fetch(
-        `https://rickandmortyapi.com/api/character/?page=${this.state.nextPage}"`
+        `https://rickandmortyapi.com/api/character/?page=${this.state.nextPage}`
       );
       const data = await response.json();
       this.setState({
@@ -54,12 +54,12 @@ class ListaDePersonajes extends Component {
             {this.state.data.results.map(character => {
               return (
                 <Personaje
-                  key={character.id}
+                  // key={character.id}
                   image={character.image}
                   nombre={character.name}
-                  especie={character.species}
-                  origen={character.origin.name}
-                  genero={character.gender}
+                  // especie={character.species}
+                  // origen={character.origin.name}
+                  // genero={character.gender}
                 ></Personaje>
               );
             })}

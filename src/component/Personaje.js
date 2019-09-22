@@ -3,28 +3,33 @@ import React, { Component } from "react";
 // import detalle from './DetallePersonaje.js'
 import { Link } from "react-router-dom";
 
-class Personaje extends Component {
-  render() {
-    return (
-      <div className="col-md-3">
-        <div className="card shadow mb-3 bg-white rounded" id={this.props.key}>
-          <img src={this.props.image} className="card-img-top" alt="..." />
-          <div className="card-body">
-            <Link id={this.props.key} to="/detalle">
-              <h5 className="card-title">{this.props.nombre}</h5>
-            </Link>
-            <p className="card-text">{this.props.especie}</p>
-            <p className="card-text">
-              <small className="text-muted">{this.props.origen}</small>
-            </p>
+function Personaje(props) {
+  const { character } = props;
+  return (
+    <div id={character.key}>
+      <img src={character.image} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <Link
+          to={{
+            pathname: `/detalle/${character.id}`,
+            state: {
+              fromNotifications: true
+            }
+          }}
+        >
+          <div className="CharacterCard__name-container text-truncate">
+            {character.name}
           </div>
-          <div className="card-footer">
-            <small className="text-muted">#{this.props.genero}</small>
-          </div>
-        </div>
+        </Link>
+
+        <p className="card-text">{character.especie}</p>
+        <p className="card-text">
+          <small className="text-muted">{character.origen}</small>
+        </p>
+        <p>{character.genero}</p>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Personaje;

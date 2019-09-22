@@ -5,7 +5,8 @@ import NotFound from "./pages/NotFound";
 import NavBar from "./component/NavBar";
 import Banner from "./component/Banner";
 import AddCurso from "./pages/newCard";
-import ListaDePersonajes from "./component/ListaDePersonajes";
+import ListaPersonajes from "./pages/ListaPersonajes";
+import DetallePersonaje from "./pages/DetallePersonaje";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -15,9 +16,13 @@ function App() {
       <NavBar />
       <Banner />
       <Switch>
-        <Route exact path="/" component={ListaDePersonajes}></Route>
+        <Route path="/personajes" component={ListaPersonajes} />
+        <Route path="/detalle/:handle" component={DetallePersonaje} />
+        {/* <Redirect from="" to="/personajes" /> */}
+
+        {/* <Route exact path="/" component={ListaDePersonajes}></Route>
         <Route exact path="/nuevo" component={AddCurso}></Route>
-        <Route component={NotFound}></Route>
+        <Route component={NotFound}></Route> */}
       </Switch>
     </BrowserRouter>
   );
