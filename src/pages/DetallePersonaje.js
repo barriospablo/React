@@ -46,7 +46,11 @@ class DetallePersonaje extends React.Component {
 
           {this.state.data && <PerfilPersonaje character={this.state.data} />}
 
-          {this.state.loading && <p className="text-center"> Loading ...</p>}
+          {this.state.loading && (
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading</span>
+            </div>
+          )}
         </div>
       </div>
     );

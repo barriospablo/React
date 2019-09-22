@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Personaje from "../component/Personaje.js";
+import "../Style/ListaPersonaje.css";
 //import logo from "../images/logo.png";
 
 class ListaPersonajes extends React.Component {
@@ -58,7 +59,11 @@ class ListaPersonajes extends React.Component {
             ))}
           </ul>
 
-          {this.state.loading && <p className="text-center"> Loading ...</p>}
+          {this.state.loading && (
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          )}
 
           {!this.state.loading && this.state.data.info.next && (
             <button onClick={() => this.getPersonajes()}>Cargar mas...</button>
